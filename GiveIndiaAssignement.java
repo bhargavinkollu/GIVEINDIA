@@ -19,12 +19,12 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class GiveIndiaAssignment {
 
 	public static WebDriver d;
-	public static int pdfcounter=0;
+	public static int pdfcounter=0;//pdf counter variable
 	public static void step1() {
 		d.get("https://en.wikipedia.org/wiki/Selenium");
 	}
 	public static void step2() {
-		List<WebElement> extlinks = d.findElements(By.xpath("/html/body/div[3]/div[3]/div[4]/div/ul[2]/li"));
+		List<WebElement> extlinks = d.findElements(By.xpath("/html/body/div[3]/div[3]/div[4]/div/ul[2]/li")); //list of webelements which contains all the external links 
         
         	for (WebElement extlink: extlinks) {
         		if(extlink.isDisplayed() && extlink.isEnabled()) {
@@ -48,7 +48,7 @@ public class GiveIndiaAssignment {
 		
 	}
 	public static void step5() {
-		List<WebElement> links = d.findElements(By.xpath("/html/body/div[3]/div[3]/div[4]/div/div[17]/ol/li"));
+		List<WebElement> links = d.findElements(By.xpath("/html/body/div[3]/div[3]/div[4]/div/div[17]/ol/li"));//list of webelements which contains reference links
 		System.out.println(links.size());
 		for(WebElement we: links) {
 			if(we.getText().contains("PDF")) {
@@ -62,7 +62,7 @@ public class GiveIndiaAssignment {
 	       WebDriverWait wait = new WebDriverWait(d,5);
 	       try {
 	    	   wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[7]/div/a")));
-	           List<WebElement> ll=d.findElements(By.xpath("/html/body/div[7]/div/a"));
+	           List<WebElement> ll=d.findElements(By.xpath("/html/body/div[7]/div/a"));//list of webelements which contains suggestions list
 	           WebElement result = ll.get(1);
 	           if(result.getText().equals("Plutonium")) {
 	        	   System.out.println("second suggestion is plutonium");
