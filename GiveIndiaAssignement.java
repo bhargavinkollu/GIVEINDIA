@@ -98,7 +98,7 @@ public class GiveIndiaAssignment {
        //end of step4
 	   System.out.println("-------------STEP6----------");
        step5();
-       System.out.println("-------------STEP7----------");
+       System.out.println("-------------STEP7-------------------");
        step6();
        
     }
